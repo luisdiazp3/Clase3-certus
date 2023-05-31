@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario ejemplo 1 - crear cuenta</title>
+
+    <!--Estilo CSS--> 
+    <!--si no se pone esto las cajitas se ponen a lado de los lebel-->
+    <!-- el label para que sean bloques (el nombre y la cajita), se pone arriba el nombre: display. 
+    Las capas tengan un marge de separacion: margin-bottom-->
+
+    <style>
+        label {
+            display: block; 
+        }
+
+        
+        div {
+            margin-bottom: 20px;
+        }
+    </style>
+
+</head>
+<body>
+    <!--el input no tiene cierre,
+    name: con que nombre se guardara en el servidor-->
+    
+    <form id="formCreateAccount" action="recibido2.html" method="get">
+        <!--con get sin servidor (action) se ve q envio en la url se ven los datos
+            con post: no se ve en la url, puede salir error, pero se ve que ha enviado
+            en Red-pailod 
+            Action: a que servidor voy a enviar los datos que se ingresan-->
+        <h2>Crear su cuenta</h2>
+
+        <div> 
+            <!--div: para ponerlo como bloques, si no se ponen a la derecha todas las cajitas-->
+            <label for="nombre">Nombre:</label> <!--para poner titulo a la cajita (roturador)-->
+            <input type="text" name="nombre" id="nombre" placeholder="Ingrese su nombre aqui" maxlength="50" required>
+            <!--placeholder: pone un texto de ayuda-->
+            <!--name: como se va a guardar la informacion en el servidor
+            id: es el identificador de la cajita de entrada, para que el lebel sepa de donde es-->
+        </div>
+
+        <div>
+            <label for="apellido">Apellido</label>
+            <input type="text" size="60" name="apellido" id="apellido" maxlength="50" required>
+            <!-- size: tamaño de la cajita, maxlength: max cantidad de letras-->
+        </div>
+        
+        <div>
+            <label for="dni">DNI</label>
+            <input type="number" name="dni" id="dni" maxlength="8" required>
+        </div>
+        
+        <div>
+            <label for="correo">Correo electronico</label>
+            <input type="email" name="correo" id="correo" maxlength="100" required>
+        </div>
+    
+        <div>
+            <label for="fechnac">Fecha Nacimiento</label>
+            <input type="date" name="fechnac" id="fechnac" min="1970-12-31" max="2005-12-31" required>
+        </div>
+
+        <div>
+            <label for="textuser">Usuario</label>
+            <input type="text" name="user" id="textuser">
+        </div>
+
+        <div>
+            <label for="password">Contraseña</label>
+            <input type="password" name="contraseña" id="password">
+        </div>
+
+        <div>
+            <label for="celular">Telefono/Celular</label>
+            <input type="tel" name="celular" id="celular">
+        </div>
+
+        <div>
+            <label for="txtaddress1">Direccion</label>
+            <input type="text" name="txtaddress" id="txtaddress1" maxlength="100"> <br>
+            <input type="text" name="txtaddress" id="txtaddress2" maxlength="100">
+            
+        </div>
+
+        <div>
+            <p>Sexo</p>
+            <input type="radio" name="sexo" id="bolMasculino" value="m" checked>
+            <label for="bolMasculino" style="display: inline;">Masculino</label>
+            <input type="radio" name="sexo" id="bolFemenino" value="f">
+            <label for="bolFemenino" style="display: inline;">Femenino</label>
+            
+            <!--checked: opcion por defecto seleccionada, y cuando se envia si es muger se envia f-->
+        </div>
+
+        <div>
+            <input type="checkbox" id="bolAccept" required>
+            <label style="display:inline-block" for="bol">Acepta las <a href="#">condiciones</a> para crear cuenta</label>
+            <!--display:inline-block: para que salga a lado de la bolita-->
+        </div>
+
+        <!--boton enviar-->
+        <div>
+            <button type="submit">Enviar</button>
+            <!--envia toda la informacion dentro del formulario al servidor-->
+        </div>
+
+
+
+    </form>
+    
+    
+
+
+
+
+</body>
+</html>
